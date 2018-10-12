@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lazy Loading With IntersectionObserver | Javascript</title>
+  <meta name="description" content="Lazy load images with javascript's IntersectionObserver API, polyfilled for IE8 and up!">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    .wrapper {
+      width: 90%;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10em;
+    }
+    .wrapper-inner {
+      max-width: 770px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    figure {
+      margin: 0;
+      position: relative;
+      padding-bottom: 67%;
+      height: 0; overflow: hidden;
+      background: #f5f5f5;
+    }
+    figure img {
+      display: block;
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+    }
+    .img--lazy {
+      opacity: 0;
+      transition: all .4s ease;
+    }
+    .img--lazy.is-loaded {
+      opacity: 1;
+    }
+    section {
+      padding: 6em 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    
+    <div class="wrapper-inner">
+      
+      <figure style="margin-bottom: 10em;">
+        <img class="img--lazy" data-lazy-src="https://placeimg.com/640/480/any" alt="">
+      </figure>
+
+      <figure style="margin-bottom: 10em;">
+        <img class="img--lazy" data-lazy-src="https://placeimg.com/640/480/any" alt="">
+      </figure>
+
+      <figure style="margin-bottom: 10em;">
+        <img class="img--lazy" data-lazy-src="https://placeimg.com/640/480/any" alt="">
+      </figure>
+
+      <figure style="margin-bottom: 10em;">
+        <img class="img--lazy" data-lazy-src="https://placeimg.com/640/480/any" alt="">
+      </figure>
+    
+    </div>
+
+    <section class="img--lazy" data-lazy-src="https://placeimg.com/1400/600/any">
+
+      <div class="demo-content">
+        <h3>Lorem ipsum dolor sit.</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi ipsa non quaerat excepturi tempora cumque adipisci fugiat, nemo illo, distinctio tenetur eos quam labore omnis ipsum molestias, perferendis ea, culpa animi vero repellat.</p>
+      </div>
+      
+    </section>
+
+  </div>
+  
+  <script src="https://polyfill.io/v2/polyfill.min.js"></script>
+  <script src="js/app.bundle.js"></script>
+</body>
+</html>
